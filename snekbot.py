@@ -15,19 +15,6 @@ async def on_ready():
     print('------')
     await bot.change_status(game=discord.Game(name="snake.exe"), idle=False)
 
-#@bot.event
-#async def on_message(message):
-#    if not message.author.id == bot.user.id:
-#        if message.server == None:
-#            await bot.send_typing(message.channel)
-#            await bot.send_message(message.channel, cb.ask(message.content))
-#        else:
-#            m = re.match(r'(.*)\s*<@!?'+bot.user.id+'>\s*(.*)',message.content)
-#            if m != None:
-#                await bot.send_typing(message.channel)
-#                await bot.send_message(message.channel, cb.ask(m.group(1)+' '+m.group(2)))
-#thanks jag
-
 @bot.command()
 async def hss(*, stuff_for_snek_to_say):
     """says stuff"""
