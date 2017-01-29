@@ -2,9 +2,10 @@ import discord
 from discord.ext import commands
 import asyncio
 import re
+import random
 from cleverbot import Cleverbot
 
-bot = commands.Bot(command_prefix=['snek ', 'snekbot '], description='this is snekbot.')
+bot = commands.Bot(command_prefix=['snek ', 'snekbot ', 'Snek', 'snekbot2', 'Snekbot2', 'snek2', 'Snek2'], description='this is snekbot.')
 cb = Cleverbot()
 
 @bot.event
@@ -13,8 +14,12 @@ async def on_ready():
     print(bot.user.name)
     print(bot.user.id)
     print('------')
-    await bot.change_status(game=discord.Game(name="snake"), idle=False)
+    await bot.change_presence(game=discord.Game(name="snake"), idle=False)
 
+@bot.command()
+async def help():
+    await bot.say('Hssssss \nhi, am snekbot2, like snekbot but better and buffer\ncall me with snek and tell me what to do eg. snek pls\nlist of commands:\n *hss* make me say thigns\n*pls*\n *whomade*\n*info*\n*invite* this give a link to add snekbot to your server\n*intensifies*\n*hello*\n*hi*\n*noboop*\n*step*\n*nervous*\n*play* say what game you want me to play\n*bully* decide if akarin will protect someone or bully them\n*art* shows you my beautiful art\n*smug*\n*git* i dunno why you would want the github but you can get it')
+	
 @bot.command()
 async def hss(*, stuff_for_snek_to_say):
     """says stuff"""
@@ -38,7 +43,7 @@ async def info():
 @bot.command()
 async def invite():
     """snekbot invite link"""
-    await bot.say('to add snekbot to your server click this: goo.gl/xqfKWn')
+    await bot.say('to add snekbot to your server click this: https://goo.gl/xqfKWn')
 
 @bot.command()
 async def intensifies():
@@ -77,14 +82,18 @@ async def play(*, game_to_play):
 
 @bot.command()
 async def bully():
-	if(randint(0,1)==0)
-		await bot.say ('http://i.imgur.com/NRMo4jZ.jpg')
-	else
-		await bot.say ('http://i.imgur.com/7NEWEFu.jpg')
-
+	await bot.say (random.choice(['http://i.imgur.com/NRMo4jZ.jpg' , 'http://i.imgur.com/7NEWEFu.jpg']))
 
 @bot.command()
-async def sourcecode():
+async def art():
+	await bot.say (random.choice(['https://farm2.staticflickr.com/1622/24885440680_02487a7356_o_d.gif' , 'https://farm6.staticflickr.com/5700/23833016945_7cab5c3e92_o_d.png']))
+
+@bot.command()
+async def smug():
+	await bot.say ('http://orig09.deviantart.net/6e2f/f/2010/132/d/7/5th_gen_starter___tsutaaja_by_arkeis_pokemon.png')
+
+@bot.command()
+async def git():
     """snek's source code"""
     await bot.say('https://github.com/SplitPixl/snekbot')
 
