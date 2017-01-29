@@ -13,7 +13,7 @@ async def on_ready():
     print(bot.user.name)
     print(bot.user.id)
     print('------')
-    await bot.change_status(game=discord.Game(name="snake.exe"), idle=False)
+    await bot.change_status(game=discord.Game(name="snake"), idle=False)
 
 @bot.command()
 async def hss(*, stuff_for_snek_to_say):
@@ -28,7 +28,7 @@ async def pls():
 @bot.command()
 async def whomade():
     """who made snek?"""
-    await bot.say('splitpixl made snekbot')
+    await bot.say('jacob made snekbot2 which was based off of SplitPixl\'s snekbot')
 
 @bot.command()
 async def info():
@@ -38,7 +38,7 @@ async def info():
 @bot.command()
 async def invite():
     """snekbot invite link"""
-    await bot.say('to add snekbot to your server click this: https://goo.gl/HTxJWJ')
+    await bot.say('to add snekbot to your server click this: goo.gl/xqfKWn')
 
 @bot.command()
 async def intensifies():
@@ -49,6 +49,11 @@ async def intensifies():
 async def hello():
     """hi"""
     await bot.say('hello yes this is snek.')
+	
+@bot.command()
+async def hi():
+    """hi"""
+    await bot.say('hi yes this is snek.')
 
 @bot.command()
 async def noboop():
@@ -56,9 +61,27 @@ async def noboop():
     await bot.say('http://i.imgur.com/j4p70OX.jpg')
 
 @bot.command()
+async def step():
+    """no step on snek"""
+    await bot.say('http://i.imgur.com/CjCZX9c.png')
+
+@bot.command()
+async def nervous():
+    """nervous hissing"""
+    await bot.say('http://i.imgur.com/b6s9WTJ.gif')
+
+@bot.command()
 async def play(*, game_to_play):
     """snek likes playing game"""
     await bot.change_status(game=discord.Game(name=game_to_play), idle=False)
+
+@bot.command()
+async def bully():
+	if(randint(0,1)==0)
+		await bot.say ('http://i.imgur.com/NRMo4jZ.jpg')
+	else
+		await bot.say ('http://i.imgur.com/7NEWEFu.jpg')
+
 
 @bot.command()
 async def sourcecode():
