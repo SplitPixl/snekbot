@@ -5,8 +5,6 @@ import re
 import random
 
 bot = commands.Bot(command_prefix=['snek ', 'snekbot ', 'Snek ', 'snekbot2 ', 'Snekbot2 ', 'snek2 ', 'Snek2 '], description='Hssssss \nhi, am snekbot2, like snekbot but better and buffer')
-
-
 @bot.event
 async def on_ready():
     print('Logged in as')
@@ -75,9 +73,13 @@ async def nervous():
 async def play(*, game_to_play):
     """snek likes playing game"""
     await bot.change_presence(game=discord.Game(name=game_to_play))
+	
 @bot.command()
-async def getServerID():
-	await bot.say(bot.server)
+async def stream(*, game_to_play):
+	"""snek likes streaming game"""
+	#await bot.change_presence(game=discord.Game(name=game_to_play))
+	await bot.change_presence(game=discord.Game(type=1,name=game_to_play,url='https://www.twitch.tv/pokespeedrunbots'))
+
 	
 @bot.command()
 async def ily():
@@ -88,11 +90,20 @@ async def ily():
 async def on_member_join(member):
 	if format(member.server)=='[S]quad':
 		# await bot.send_message(member.server, 'Welcome {0}!'.format(member))
-		await bot.send_message(member.server, 'Welcome to the {0} Discord!\nIf you have any questions, feel free to ask any of the mods'.format(member.server))
+		await bot.send_message(member.server, 'Welcome to the [S]quad Discord!\nIf you have any questions, feel free to ask any of the mods')
 
+@bot.command()
+async def whoBully():
+	"""who does snek bully? (not implemented)"""
 	
 @bot.command()
-async def bully():
+async def bully(member : discord.User = bot.user):
+	"""watch out, snek will bully u"""
+	bully_reply=['snek thinks ur dum {0}'.format(member.name),'wow snek thinks {0}\'s waifu isnt the best waifu, but she\'s still okay'.format(member.name),'snek thinks {0} don\'t smell as good as root beer'.format(member.name)] 
+	await bot.say(random.choice(bully_reply))
+
+@bot.command()
+async def ifbully():
 	"""to bully or not to bully"""
 	await bot.say (random.choice(['http://i.imgur.com/NRMo4jZ.jpg' , 'http://i.imgur.com/7NEWEFu.jpg']))
 
