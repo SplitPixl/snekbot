@@ -131,9 +131,7 @@ async def suggest(*, suggestion):
 async def live():
 	await bot.say ('i have risen my son')
 
-@bot.command()
-async def suggest(*, suggestion):
-	"""suggestions of things to add to snek"""
+
 @bot.command()
 async def whomade():
     """who made snek?"""
