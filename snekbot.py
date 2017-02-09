@@ -99,8 +99,15 @@ async def whoBully():
 @bot.command()
 async def bully(member : discord.User = bot.user):
 	"""watch out, snek will bully u"""
-	bully_reply=['snek thinks ur dum {0}'.format(member.name),'wow snek thinks {0}\'s waifu isnt the best waifu, but she\'s still okay'.format(member.name),'snek thinks {0} don\'t smell as good as root beer'.format(member.name),'{0}\'s hair? WACK\n{0}\'s gear?WACK\n{0}\'s jewelry? WACK\n{0}\'s foot stance? WACK\nThe way that {0} talks? WACK\nThe way that {0} doesn\'t even like to smile? WACK\nSnekbot2? I\'M TIGHT AS FUCK'.format(member.name),'snek thinks {0} is a baka aho unchi'.format(member.name),'{0} is basically shmorky tbh fam'.format(member.name),'snek knows that {0} thinks lucky star is good'.format(member.name)] 
-	await bot.say(random.choice(bully_reply))
+	bully_reply=[]
+	bully_object=open("bully.txt","r")
+	while 1:
+		line = bully_object.readline()
+		if not line:
+			break	
+		else:
+			bully_reply.append(line)
+	await bot.say(random.choice(bully_reply).format(member.name));	
 
 @bot.command()
 async def ifbully():
