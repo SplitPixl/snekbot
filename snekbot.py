@@ -122,12 +122,6 @@ async def ifbully():
 	await bot.say (random.choice(['http://i.imgur.com/NRMo4jZ.jpg' , 'http://i.imgur.com/7NEWEFu.jpg']))
 
 @bot.command()
-async def suggest(*, suggestion):
-	"""suggestions of things to add to snek"""
-	
-
-
-@bot.command()
 async def live():
 	await bot.say ('i have risen my son')
 
@@ -147,6 +141,6 @@ async def invite():
 @bot.command()
 async def git():
     """snek's source code"""
-    await bot.say('https://github.com/SplitPixl/snekbot')
+    await bot.say('https://github.com/JacobMintzer/snekbot')
 file_object=open("key.txt","r")
 bot.run(file_object.read())
