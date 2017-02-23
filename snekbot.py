@@ -4,7 +4,7 @@ import asyncio
 import re
 import random
 
-bot = commands.Bot(command_prefix=['snek ', 'snekbot ', 'Snek ', 'snekbot2 ', 'Snekbot2 ', 'snek2 ', 'Snek2 '], description='Hssssss \nhi, am snekbot2, like snekbot but better and buffer')
+bot = commands.Bot(command_prefix=['snek ', 'snekbot ', 'Snek ', 'snekbot2 ', 'Snekbot2 ', 'snek2 ', 'Snek2 ','SNEK '], description='Hssssss \nhi, am snekbot2, like snekbot but better and buffer')
 @bot.event
 async def on_ready():
     print('Logged in as')
@@ -125,6 +125,21 @@ async def ifbully():
 async def live():
 	await bot.say ('i have risen my son')
 
+@bot.command()
+async def REE():
+	"""REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"""
+	await bot.say('REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE')
+	
+@bot.command()
+async def tendies():
+	"""snek wants tendies"""
+	await bot.say('MOM WHERE ARE MY TENDIES\nREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE')
+	
+@bot.command()
+async def sad():
+	"""snek is sad"""
+	await bot.say('https://cdn.drawception.com/images/panels/2012/3-31/8SMj5httsM-12.png')
+	
 
 @bot.command()
 async def whomade():
