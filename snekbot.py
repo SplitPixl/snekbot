@@ -35,7 +35,7 @@ def on_member_join(member):
 def hss(*, stuff_for_snek_to_say):
 	"""says stuff"""
 	yield from bot.say(stuff_for_snek_to_say)
-	print(stuff_for_snek_to_say)
+	
 
 @bot.command()
 @asyncio.coroutine 
