@@ -6,105 +6,105 @@ import random
 
 bot = commands.Bot(command_prefix=['snek ', 'snekbot ', 'Snek ', 'snekbot2 ', 'Snekbot2 ', 'snek2 ', 'Snek2 ','SNEK '], description='Hssssss \nhi, am snekbot2, like snekbot but better and buffer')
 @bot.event
-async def on_ready():
+@asyncio.coroutine def on_ready():
     print('Logged in as')
     print(bot.user.name)
     print(bot.user.id)
     print('------')
-    await bot.change_presence(game=discord.Game(name="snake"))
+    yield from bot.change_presence(game=discord.Game(name="snake"))
 
 @bot.event
-async def on_message(message):
+@asyncio.coroutine def on_message(message):
 	if message.content.startswith('Snek suggest') or message.content.startswith('snek suggest'):
-		await bot.say('thank you {0} for the suggestion, snek will work on it'.format(message.author.name))
+		yield from bot.say('thank you {0} for the suggestion, snek will work on it'.format(message.author.name))
 		suggestion_obj=open("suggest.txt","a+")
 		suggestion_obj.write(message.author.name+": "+message.content+'\n');
-	await bot.process_commands(message)
+	yield from bot.process_commands(message)
 
 @bot.event
-async def on_member_join(member):
+@asyncio.coroutine def on_member_join(member):
 	if format(member.server)=='[S]quad':
-		# await bot.send_message(member.server, 'Welcome {0}!'.format(member))
-		await bot.send_message(member.server, 'Welcome to the [S]quad Discord!\nIf you have any questions, feel free to ask any of the mods')
+		# yield from bot.send_message(member.server, 'Welcome {0}!'.format(member))
+		yield from bot.send_message(member.server, 'Welcome to the [S]quad Discord!\nIf you have any questions, feel free to ask any of the mods')
 
 @bot.command()
-async def hss(*, stuff_for_snek_to_say):
+@asyncio.coroutine def hss(*, stuff_for_snek_to_say):
 	"""says stuff"""
-	await bot.say(stuff_for_snek_to_say)
+	yield from bot.say(stuff_for_snek_to_say)
 	print(stuff_for_snek_to_say)
 
 @bot.command()
-async def pls():
+@asyncio.coroutine def pls():
     """try it"""
-    await bot.say(':snake:')
+    yield from bot.say(':snake:')
 @bot.command()
-async def plsno():
+@asyncio.coroutine def plsno():
 	"""pls no this is a bad idea u will regret it"""
-	await bot.say('snek pls')
-	await bot.say('snek pls')
-	await bot.say('snek pls')
-	await bot.say('snek pls')
-	await bot.say('snek pls')
-	await bot.say('snek pls')
+	yield from bot.say('snek pls')
+	yield from bot.say('snek pls')
+	yield from bot.say('snek pls')
+	yield from bot.say('snek pls')
+	yield from bot.say('snek pls')
+	yield from bot.say('snek pls')
 @bot.command()
-async def hello():
+@asyncio.coroutine def hello():
     """hi"""
-    await bot.say('hello yes this is snek.')
+    yield from bot.say('hello yes this is snek.')
 @bot.command()
-async def hi():
+@asyncio.coroutine def hi():
     """hello"""
-    await bot.say('hi yes this is snek.')
+    yield from bot.say('hi yes this is snek.')
 
 @bot.command()
-async def intensifies():
+@asyncio.coroutine def intensifies():
     """[SNEK INTENSIFIES]"""
-    await bot.say('http://i.imgur.com/hSZfCiD.gif')
+    yield from bot.say('http://i.imgur.com/hSZfCiD.gif')
 @bot.command()
-async def noboop():
+@asyncio.coroutine def noboop():
     """noboop snek"""
-    await bot.say('http://i.imgur.com/j4p70OX.jpg')
+    yield from bot.say('http://i.imgur.com/j4p70OX.jpg')
 @bot.command()
-async def step():
+@asyncio.coroutine def step():
     """no step on snek"""
-    await bot.say('http://i.imgur.com/CjCZX9c.png')
+    yield from bot.say('http://i.imgur.com/CjCZX9c.png')
 @bot.command()
-async def nervous():
+@asyncio.coroutine def nervous():
     """nervous hissing"""
-    await bot.say('http://i.imgur.com/b6s9WTJ.gif')
+    yield from bot.say('http://i.imgur.com/b6s9WTJ.gif')
 @bot.command()
-async def art():
+@asyncio.coroutine def art():
 	"""jacob's beautiful art"""
-	await bot.say (random.choice(['https://farm2.staticflickr.com/1622/24885440680_02487a7356_o_d.gif' , 'https://farm6.staticflickr.com/5700/23833016945_7cab5c3e92_o_d.png']))
+	yield from bot.say (random.choice(['https://farm2.staticflickr.com/1622/24885440680_02487a7356_o_d.gif' , 'https://farm6.staticflickr.com/5700/23833016945_7cab5c3e92_o_d.png']))
 @bot.command()
-async def smug():
+@asyncio.coroutine def smug():
 	"""u srs askin snek what smug is?"""
-	await bot.say ('http://orig09.deviantart.net/6e2f/f/2010/132/d/7/5th_gen_starter___tsutaaja_by_arkeis_pokemon.png')
+	yield from bot.say ('http://orig09.deviantart.net/6e2f/f/2010/132/d/7/5th_gen_starter___tsutaaja_by_arkeis_pokemon.png')
 
 	
 @bot.command()
-async def play(*, game_to_play):
+@asyncio.coroutine def play(*, game_to_play):
     """snek likes playing game"""
-    await bot.change_presence(game=discord.Game(name=game_to_play))
+    yield from bot.change_presence(game=discord.Game(name=game_to_play))
 	
 @bot.command()
-async def stream(*, game_to_play):
+@asyncio.coroutine def stream(*, game_to_play):
 	"""snek likes streaming game"""
-	#await bot.change_presence(game=discord.Game(name=game_to_play))
-	await bot.change_presence(game=discord.Game(type=1,name=game_to_play,url='https://www.twitch.tv/pokespeedrunbots'))
+	#yield from bot.change_presence(game=discord.Game(name=game_to_play))
+	yield from bot.change_presence(game=discord.Game(type=1,name=game_to_play,url='https://www.twitch.tv/pokespeedrunbots'))
 
 	
 @bot.command()
-async def ily():
+@asyncio.coroutine def ily():
 	"""tell snek ily"""
-	await bot.say('snek loves yogurt 2')
+	yield from bot.say('snek loves yogurt 2')
 
 
 @bot.command()
-async def whoBully():
+@asyncio.coroutine def whoBully():
 	"""who does snek bully? (not implemented)"""
 	
 @bot.command()
-async def bully(member : discord.User = bot.user):
+@asyncio.coroutine def bully(member : discord.User = bot.user):
 	"""watch out, snek will bully u"""
 	bully_reply=[]
 	bully_object=open("bully.txt","r")
@@ -114,48 +114,48 @@ async def bully(member : discord.User = bot.user):
 			break	
 		else:
 			bully_reply.append(line)
-	await bot.say(random.choice(bully_reply).format(member.name));	
+	yield from bot.say(random.choice(bully_reply).format(member.name));	
 
 @bot.command()
-async def ifbully():
+@asyncio.coroutine def ifbully():
 	"""to bully or not to bully"""
-	await bot.say (random.choice(['http://i.imgur.com/NRMo4jZ.jpg' , 'http://i.imgur.com/7NEWEFu.jpg']))
+	yield from bot.say (random.choice(['http://i.imgur.com/NRMo4jZ.jpg' , 'http://i.imgur.com/7NEWEFu.jpg']))
 
 @bot.command()
-async def live():
-	await bot.say ('i have risen my son')
+@asyncio.coroutine def live():
+	yield from bot.say ('i have risen my son')
 
 @bot.command()
-async def REE():
+@asyncio.coroutine def REE():
 	"""REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"""
-	await bot.say('REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE')
+	yield from bot.say('REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE')
 	
 @bot.command()
-async def tendies():
+@asyncio.coroutine def tendies():
 	"""snek wants tendies"""
-	await bot.say('MOM WHERE ARE MY TENDIES\nREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE')
+	yield from bot.say('MOM WHERE ARE MY TENDIES\nREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE')
 	
 @bot.command()
-async def sad():
+@asyncio.coroutine def sad():
 	"""snek is sad"""
-	await bot.say('https://cdn.drawception.com/images/panels/2012/3-31/8SMj5httsM-12.png')
+	yield from bot.say('https://cdn.drawception.com/images/panels/2012/3-31/8SMj5httsM-12.png')
 	
 
 @bot.command()
-async def whomade():
+@asyncio.coroutine def whomade():
     """who made snek?"""
-    await bot.say('jacob made snekbot2 which was based off of SplitPixl\'s snekbot')
+    yield from bot.say('jacob made snekbot2 which was based off of SplitPixl\'s snekbot')
 @bot.command()
-async def info():
+@asyncio.coroutine def info():
     """info about snekbot"""
-    await bot.say('snekbot was coded in python with the library discord.py. hss.')
+    yield from bot.say('snekbot was coded in python with the library discord.py. hss.')
 @bot.command()
-async def invite():
+@asyncio.coroutine def invite():
     """snekbot invite link"""
-    await bot.say('to add snekbot to your server click this: https://goo.gl/xqfKWn')
+    yield from bot.say('to add snekbot to your server click this: https://goo.gl/xqfKWn')
 @bot.command()
-async def git():
+@asyncio.coroutine def git():
     """snek's source code"""
-    await bot.say('https://github.com/JacobMintzer/snekbot')
+    yield from bot.say('https://github.com/JacobMintzer/snekbot')
 file_object=open("key.txt","r")
 bot.run(file_object.read())
