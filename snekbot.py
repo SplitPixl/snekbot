@@ -13,12 +13,13 @@ def on_ready():
     print(bot.user.id)
     print('------')
     yield from bot.change_presence(game=discord.Game(name="snake"))
+	#discord.opus.load_opus('opus')
 
 @bot.event
 @asyncio.coroutine 
 def on_message(message):
 	if message.content.startswith('Snek suggest') or message.content.startswith('snek suggest'):
-		yield from bot.say('thank you {0} for the suggestion, snek will work on it'.format(message.author.name))
+		yield from bot.send_message(message.channel,'thank you {0} for the suggestion, snek will work on it'.format(message.author.name))
 		suggestion_obj=open("suggest.txt","a+")
 		suggestion_obj.write(message.author.name+": "+message.content+'\n');
 	yield from bot.process_commands(message)
@@ -36,7 +37,11 @@ def hss(*, stuff_for_snek_to_say):
 	"""says stuff"""
 	yield from bot.say(stuff_for_snek_to_say)
 	
-
+@bot.command()
+@asyncio.coroutine
+def tiddies():
+	"""dem sweet snek tiddies"""
+	yield from bot.say('http://i.imgur.com/n3XYGyI.png')
 @bot.command()
 @asyncio.coroutine 
 def pls():
@@ -77,7 +82,7 @@ def noboop():
 @asyncio.coroutine 
 def step():
     """no step on snek"""
-    yield from bot.say('http://i.imgur.com/CjCZX9c.png')
+    yield from bot.say('http://i.imgur.com/SSkvSQL.jpg')
 @bot.command()
 @asyncio.coroutine 
 def nervous():
@@ -133,7 +138,7 @@ def bully(member : discord.User = bot.user):
 			break	
 		else:
 			bully_reply.append(line)
-	yield from bot.say(random.choice(bully_reply).format(member.name));	
+	yield from bot.say(random.choice(bully_reply).format(member));	
 
 @bot.command()
 @asyncio.coroutine 
