@@ -21,20 +21,7 @@ def on_message(message):
 	if message.content.startswith('Snek suggest') or message.content.startswith('snek suggest'):
 		yield from bot.send_message(message.channel,'thank you {0} for the suggestion, snek will work on it'.format(message.author.name))
 		suggestion_obj=open("suggest.txt","a+")
-		suggestion_obj.write(message.author.name+": "+message.content+'\n')
-	elif message.content.startswith('snek flirt'):
-		if format(message.server)=='[S]quad' or format(message.server)=='#squad':
-			yield from bot.send_message(message.channel,'not in a christian server')
-		else:
-			flirt_reply=[]
-			flirt_object=open("flirt.txt","r")
-			while 1:
-				line = flirt_object.readline()
-				if not line:
-					break	
-				else:
-					flirt_reply.append(line)
-					yield from bot.say(random.choice(flirt_reply))
+		suggestion_obj.write(message.author.name+": "+message.content+'\n');
 	yield from bot.process_commands(message)
 
 @bot.event
@@ -158,7 +145,15 @@ def bully(member : discord.User = bot.user):
 @asyncio.coroutine 
 def flirt():
 	"""snek is smuuth"""
-	
+	flirt_reply=[]
+	flirt_object=open("flirt.txt","r")
+	while 1:
+		line = flirt_object.readline()
+		if not line:
+			break	
+		else:
+			flirt_reply.append(line)
+	yield from bot.say(random.choice(flirt_reply))
 	
 @bot.command()
 @asyncio.coroutine 
