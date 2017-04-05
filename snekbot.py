@@ -12,7 +12,7 @@ def on_ready():
     print(bot.user.name)
     print(bot.user.id)
     print('------')
-    yield from bot.change_presence(game=discord.Game(name="snake"))
+    #yield from bot.change_presence(game=discord.Game(name="snake"))
 	#discord.opus.load_opus('opus')
 
 @bot.event
@@ -42,6 +42,7 @@ def hss(*, stuff_for_snek_to_say):
 def tiddies():
 	"""dem sweet snek tiddies"""
 	yield from bot.say('http://i.imgur.com/n3XYGyI.png')
+
 @bot.command()
 @asyncio.coroutine 
 def pls():
@@ -138,8 +139,22 @@ def bully(member : discord.User = bot.user):
 			break	
 		else:
 			bully_reply.append(line)
-	yield from bot.say(random.choice(bully_reply).format(member));	
+	yield from bot.say(random.choice(bully_reply).format(member))
 
+@bot.command()
+@asyncio.coroutine 
+def flirt():
+	"""snek is smuuth"""
+	flirt_reply=[]
+	flirt_object=open("flirt.txt","r")
+	while 1:
+		line = flirt_object.readline()
+		if not line:
+			break	
+		else:
+			flirt_reply.append(line)
+	yield from bot.say(random.choice(flirt_reply))
+	
 @bot.command()
 @asyncio.coroutine 
 def ifbully():
