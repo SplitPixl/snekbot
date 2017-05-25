@@ -122,11 +122,7 @@ def ily():
 	yield from bot.say('snek loves yogurt 2')
 
 
-@bot.command()
-@asyncio.coroutine 
-def whoBully():
-	"""who does snek bully? (not implemented)"""
-	
+
 @bot.command()
 @asyncio.coroutine 
 def bully(member : discord.User = bot.user):
@@ -141,6 +137,24 @@ def bully(member : discord.User = bot.user):
 			bully_reply.append(line)
 	yield from bot.say(random.choice(bully_reply).format(member.mention))
 
+@bot.command()
+@asyncio.coroutine 
+def push():
+	yield from bot.say('snek is PUSHING BUTTONS')
+	
+@bot.command()
+@asyncio.coroutine 
+def jump():
+	yield from bot.say('WHY U JUMPIN? PUSSYYYYYYYYYYYYYYYYYYYYYYYYYYYY')
+	
+@bot.command()
+@asyncio.coroutine 
+def facebook():
+	yield from bot.say('http://3.bp.blogspot.com/-LVwahNhtd9M/UcYXK8QycJI/AAAAAAAAF3I/8JH3xKlIJYI/s1600/troll+face.gif')
+	
+def results():
+	yield from bot.say ('snek got 3rd in an 8 person bracket once')
+	
 @bot.command()
 @asyncio.coroutine 
 def flirt():
