@@ -12,7 +12,7 @@ def on_ready():
     print(bot.user.name)
     print(bot.user.id)
     print('------')
-    #yield from bot.change_presence(game=discord.Game(name="snake"))
+    yield from bot.change_presence(game=discord.Game(name="snake"))
 	#discord.opus.load_opus('opus')
 
 @bot.event
@@ -139,7 +139,7 @@ def bully(member : discord.User = bot.user):
 			break	
 		else:
 			bully_reply.append(line)
-	yield from bot.say(random.choice(bully_reply).format(member))
+	yield from bot.say(random.choice(bully_reply).format(member.mention))
 
 @bot.command()
 @asyncio.coroutine 
