@@ -2,10 +2,9 @@ import discord
 from discord.ext import commands
 import asyncio
 import re
-from cleverbot import Cleverbot
+import random
 
 bot = commands.Bot(command_prefix=['snek ', 'snekbot '], description='this is snekbot.')
-cb = Cleverbot()
 
 @bot.event
 async def on_ready():
@@ -13,7 +12,7 @@ async def on_ready():
     print(bot.user.name)
     print(bot.user.id)
     print('------')
-    await bot.change_status(game=discord.Game(name="snake.exe"), idle=False)
+    await bot.change_presence(game=discord.Game(name="snek.py"))
 
 @bot.command()
 async def hss(*, stuff_for_snek_to_say):
@@ -38,12 +37,12 @@ async def info():
 @bot.command()
 async def invite():
     """snekbot invite link"""
-    await bot.say('to add snekbot to your server click this: https://goo.gl/HTxJWJ')
+    await bot.say('to add snekbot to your server click this: https://snek.splitpixl.xyz/')
 
 @bot.command()
 async def intensifies():
     """[SNEK INTENSIFIES]"""
-    await bot.say('http://i.imgur.com/hSZfCiD.gif')
+    await bot.say('https://snek.splitpixl.xyz/intense.gif')
 
 @bot.command()
 async def hello():
@@ -53,17 +52,23 @@ async def hello():
 @bot.command()
 async def noboop():
     """noboop snek"""
-    await bot.say('http://i.imgur.com/j4p70OX.jpg')
+    await bot.say('https://snek.splitpixl.xyz/noboop.jpg')
 
 @bot.command()
 async def play(*, game_to_play):
     """snek likes playing game"""
-    await bot.change_status(game=discord.Game(name=game_to_play), idle=False)
+    await bot.change_presence(game=discord.Game(name=game_to_play))
 
 @bot.command()
 async def sourcecode():
     """snek's source code"""
     await bot.say('https://github.com/SplitPixl/snekbot')
 
+@bot.command()
+async def snek():
+    """sneksneksnek"""
+    sneks = ['snek', 'hss', 'ssssnek', 'slither', 'snek sneek']
+    await bot.say(random.choice(sneks))
 
-bot.run('giv token pls')
+
+bot.run(open('./token','r').read().replace('\n', ''))
