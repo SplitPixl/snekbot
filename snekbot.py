@@ -22,14 +22,17 @@ def on_message(message):
 		yield from bot.send_message(message.channel,'thank you {0} for the suggestion, snek will work on it'.format(message.author.name))
 		suggestion_obj=open("suggest.txt","a+")
 		suggestion_obj.write(message.author.name+": "+message.content+'\n');
+	elif message.content.startswith('snek shut up') or message.content.startswith('Snek shut up'):
+		yield from bot.send_message(message.channel,'exCUSE me FUCKer but who the FUCK do you THINk you aRe')
 	yield from bot.process_commands(message)
 
 @bot.event
 @asyncio.coroutine 
-def on_member_join(member):
-	if format(member.server)=='[S]quad':
+##
+#def on_member_join(member):
+#	if format(member.server)=='[S]quad':
 		# yield from bot.send_message(member.server, 'Welcome {0}!'.format(member))
-		yield from bot.send_message(member.server, 'Welcome to the [S]quad Discord!\nIf you have any questions, feel free to ask any of the mods')
+#		yield from bot.send_message(member.server, 'Welcome to the [S]quad Discord!\nIf you have any questions, feel free to ask any of the mods')
 
 @bot.command()
 @asyncio.coroutine 
