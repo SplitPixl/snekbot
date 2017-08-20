@@ -155,6 +155,8 @@ def jump():
 def facebook():
 	yield from bot.say('http://3.bp.blogspot.com/-LVwahNhtd9M/UcYXK8QycJI/AAAAAAAAF3I/8JH3xKlIJYI/s1600/troll+face.gif')
 	
+@bot.command()
+@asyncio.coroutine 
 def results():
 	yield from bot.say ('snek got 3rd in an 8 person bracket once')
 	
