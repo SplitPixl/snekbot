@@ -12,7 +12,7 @@ def on_ready():
     print(bot.user.name)
     print(bot.user.id)
     print('------')
-    yield from bot.change_presence(game=discord.Game(name="snake"))
+    yield from bot.change_presence(type=0,game=discord.Game(name="snake"))
 	#discord.opus.load_opus('opus')
 
 @bot.event
@@ -108,14 +108,14 @@ def smug():
 @asyncio.coroutine 
 def play(*, game_to_play):
     """snek likes playing game"""
-    yield from bot.change_presence(game=discord.Game(name=game_to_play))
+    yield from bot.change_presence(type=0,game=discord.Game(name=game_to_play))
 	
 @bot.command()
 @asyncio.coroutine 
 def stream(*, game_to_play):
 	"""snek likes streaming game"""
 	#yield from bot.change_presence(game=discord.Game(name=game_to_play))
-	yield from bot.change_presence(game=discord.Game(type=1,name=game_to_play,url='https://www.twitch.tv/pokespeedrunbots'))
+	yield from bot.change_presence(game=discord.Game(type=1,name=game_to_play,url='https://www.twitch.tv/ikosmos'))
 
 	
 @bot.command()
