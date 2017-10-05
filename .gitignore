@@ -47,4 +47,6 @@ Temporary Items
 .apdisk
 
 # Nope!
-token
+token.*
+
+__pycache__
