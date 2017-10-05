@@ -71,4 +71,4 @@ async def snek():
     await bot.say(random.choice(sneks))
 
 
-bot.run(open('./token','r').read().replace('\n', ''))
+bot.run(open('./token.discord','r').read().replace('\n', ''))
