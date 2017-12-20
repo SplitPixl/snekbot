@@ -62,7 +62,7 @@ async def play(*, game_to_play):
 @bot.command()
 async def boop(*, who_to_boop):
     """boop that heckr"""
-    await bot.say(f"*boops {who_to_boop}*")
+    await bot.say("*boops " + who_to_boop + "*")
 
 @bot.command()
 async def sourcecode():

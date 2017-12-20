@@ -31,7 +31,7 @@ def sourcecode(bot, update):
 
 def boop(bot, update):
     who_to_boop = update.message.text.split(' ').pop(0).join(' ')
-    update.message.reply_text(f'*boops {who_to_boop}*')
+    update.message.reply_text('*boops ' + who_to_boop + '*')
 
 def snek(bot, update):
     sneks = ['snek', 'hss', 'ssssnek', 'slither', 'snek sneek']
