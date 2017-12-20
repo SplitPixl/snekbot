@@ -2,12 +2,8 @@
 from telegram.ext import Updater, CommandHandler
 import random
 
-import logging
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-                    level=logging.INFO)
-
 def hss(bot, update):
-    update.message.reply_text(update.message.text.replace('/hss', ''))
+    update.message.reply_text(update.message.text.split(' ').pop(0).join(' '))
 
 def pls(bot, update):
     update.message.reply_text(':snake:')
@@ -32,6 +28,10 @@ def noboop(bot, update):
 
 def sourcecode(bot, update):
     update.message.reply_text('https://github.com/SplitPixl/snekbot')
+
+def boop(bot, update):
+    who_to_boop = update.message.text.split(' ').pop(0).join(' ')
+    update.message.reply_text(f'*boops {who_to_boop}*')
 
 def snek(bot, update):
     sneks = ['snek', 'hss', 'ssssnek', 'slither', 'snek sneek']

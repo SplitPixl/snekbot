@@ -60,6 +60,11 @@ async def play(*, game_to_play):
     await bot.change_presence(game=discord.Game(name=game_to_play))
 
 @bot.command()
+async def boop(*, who_to_boop):
+    """boop that heckr"""
+    await bot.say(f"*boops {who_to_boop}*")
+
+@bot.command()
 async def sourcecode():
     """snek's source code"""
     await bot.say('https://github.com/SplitPixl/snekbot')
