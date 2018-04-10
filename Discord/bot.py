@@ -75,5 +75,9 @@ async def snek():
     sneks = ['snek', 'hss', 'ssssnek', 'slither', 'snek sneek']
     await bot.say(random.choice(sneks))
 
+@bot.command()
+async def noodle():
+    """snek is not noodles"""
+    await bot.say('🐍 ≠ 🍝!')
 
 bot.run(open('./token.discord','r').read().replace('\n', ''))

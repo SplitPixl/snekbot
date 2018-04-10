@@ -37,6 +37,9 @@ def snek(bot, update):
     sneks = ['snek', 'hss', 'ssssnek', 'slither', 'snek sneek']
     update.message.reply_text(random.choice(sneks))
 
+def noodle(bot, update):
+    update.message.reply_text('🐍 ≠ 🍝!')
+
 updater = Updater(open('./token.telegram','r').read().replace('\n', ''))
 
 updater.dispatcher.add_handler(CommandHandler('hss', hss))
@@ -49,6 +52,7 @@ updater.dispatcher.add_handler(CommandHandler('hello', hello))
 updater.dispatcher.add_handler(CommandHandler('noboop', noboop))
 updater.dispatcher.add_handler(CommandHandler('sourcecode', sourcecode))
 updater.dispatcher.add_handler(CommandHandler('snek', snek))
+updater.dispatcher.add_handler(CommandHandler('noodle', noodle))
 
 updater.start_polling()
 updater.idle()
