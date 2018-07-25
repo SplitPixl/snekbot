@@ -15,16 +15,16 @@ def info(bot, update):
     update.message.reply_text('snekbot was coded in python with the library python-telegram-bot. hss.')
 
 def invite(bot, update):
-    update.message.reply_text('to use snekbot in your groups click this: https://snek.splitpixl.xyz/')
+    update.message.reply_text('to use snekbot in your groups click this: https://bot.sneks.space/')
 
 def intensifies(bot, update):
-    update.message.reply_text('https://snek.splitpixl.xyz/intense.gif')
+    update.message.reply_text('https://bot.sneks.space/intense.gif')
 
 def hello(bot, update):
     update.message.reply_text('hello yes this is snek.')
 
 def noboop(bot, update):
-    update.message.reply_text('https://snek.splitpixl.xyz/noboop.jpg')
+    update.message.reply_text('https://bot.sneks.space/noboop.jpg')
 
 def sourcecode(bot, update):
     update.message.reply_text('https://github.com/SplitPixl/snekbot')

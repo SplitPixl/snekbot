@@ -37,12 +37,12 @@ async def info():
 @bot.command()
 async def invite():
     """snekbot invite link"""
-    await bot.say('to add snekbot to your server click this: https://snek.splitpixl.xyz/')
+    await bot.say('to add snekbot to your server click this: https://bot.sneks.space/')
 
 @bot.command()
 async def intensifies():
     """[SNEK INTENSIFIES]"""
-    await bot.say('https://snek.splitpixl.xyz/intense.gif')
+    await bot.say('https://bot.sneks.space/intense.gif')
 
 @bot.command()
 async def hello():
@@ -52,7 +52,7 @@ async def hello():
 @bot.command()
 async def noboop():
     """noboop snek"""
-    await bot.say('https://snek.splitpixl.xyz/noboop.jpg')
+    await bot.say('https://bot.sneks.space/noboop.jpg')
 
 @bot.command()
 async def play(*, game_to_play):
